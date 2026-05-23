@@ -64,5 +64,15 @@ Students can rate each activity, upload supporting photos, and view their own pr
 
 ---
 
+## Developer & Agent Resources
+
+To support co-development, the detailed specifications for this project are organized into specialized files. You can find the main documentation entry point at:
+* 📑 **[AGENTS.md](AGENTS.md)**: Main developer and AI agent manual.
+  * 📋 **[prd.md](prd.md)**: Product Requirements Document.
+  * 🏗️ **[sdd.md](sdd.md)**: System Design Document.
+  * 🎨 **[design.md](design.md)**: UI/UX Design Specification.
+
+---
+
 AceeStats is intended to help students stay organized, celebrate their achievements, and discover activity trends across their school community.
 
