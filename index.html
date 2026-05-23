@@ -156,6 +156,7 @@
             </div>
             <h3 class="profile-username" id="user-display-name">Loading...</h3>
             <div class="profile-school" id="user-school-text">🏫 Loading school...</div>
+            <div class="profile-streak" id="user-streak-text">🔥 Loading streak...</div>
             <p class="profile-bio" id="user-bio-text">Loading bio...</p>
             <button class="edit-profile-btn" id="open-edit-modal-btn">Edit Profile</button>
             
@@ -230,6 +231,22 @@
               <div class="quicklink-item" data-action="profile">
                 <span class="quicklink-icon">👤</span>
                 <span>Manage My Portfolio</span>
+              </div>
+            </div>
+
+            <div class="sidebar-stats-section" style="margin-top: 32px; border-top: 1px solid var(--border-card); padding-top: 24px;">
+              <h4 class="breakdown-title">My Metrics</h4>
+              <div class="sidebar-stat-item" style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:13px;">
+                <span style="color:var(--text-muted); font-weight:600;">Total Logs</span>
+                <span id="feed-stats-total" style="font-weight:800; color:var(--accent-primary);">0</span>
+              </div>
+              <div class="sidebar-stat-item" style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:13px;">
+                <span style="color:var(--text-muted); font-weight:600;">Top Category</span>
+                <span id="feed-stats-top-cat" style="font-weight:800; font-size:11px; text-transform:uppercase; color:var(--text-main); max-width:130px; text-align:right; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">None</span>
+              </div>
+              <div class="sidebar-stat-item" style="display:flex; justify-content:space-between; font-size:13px;">
+                <span style="color:var(--text-muted); font-weight:600;">Average Rating</span>
+                <span id="feed-stats-avg-rating" style="font-weight:800; color:#fbbf24;">0.0 ★</span>
               </div>
             </div>
           </aside>

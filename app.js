@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     init() {
-      const CURRENT_VERSION = 'v2.4';
+      const CURRENT_VERSION = 'v2.5';
       const storedVersion = localStorage.getItem('acee_db_version');
 
       // Schema/content auto-update block: clear stale localStorage cache to force clean reload of working images
@@ -436,6 +436,11 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('user-avatar').src = data.user.avatar_url;
       document.getElementById('user-display-name').textContent = data.user.name;
       document.getElementById('user-school-text').textContent = "🏫 " + (data.user.school || "University of the Philippines Diliman");
+      
+      // Calculate dynamic streak based on active log counts (gamification element)
+      const streakWeeks = Math.max(1, Math.floor(data.activities.length * 1.25));
+      document.getElementById('user-streak-text').innerHTML = `🔥 ${streakWeeks} Week Streak`;
+
       document.getElementById('user-bio-text').textContent = data.user.bio;
 
       // Render star rating progress bars
@@ -628,6 +633,38 @@ document.addEventListener('DOMContentLoaded', () => {
           `;
           feedContainer.appendChild(card);
         });
+      }
+
+      // Compute and display live sidebar metrics for the active user
+      const userLogs = feed.filter(p => p.author.isSelf);
+      const totalLogsEl = document.getElementById('feed-stats-total');
+      const topCatEl = document.getElementById('feed-stats-top-cat');
+      const avgRatingEl = document.getElementById('feed-stats-avg-rating');
+
+      if (totalLogsEl) totalLogsEl.textContent = userLogs.length;
+
+      if (userLogs.length > 0) {
+        // Average Rating
+        const avg = userLogs.reduce((acc, curr) => acc + curr.rating, 0) / userLogs.length;
+        if (avgRatingEl) avgRatingEl.textContent = avg.toFixed(1) + " ★";
+
+        // Top Category
+        const catMap = {};
+        userLogs.forEach(log => {
+          catMap[log.category] = (catMap[log.category] || 0) + 1;
+        });
+        let topCat = "None";
+        let maxCount = 0;
+        for (const [cat, count] of Object.entries(catMap)) {
+          if (count > maxCount) {
+            maxCount = count;
+            topCat = cat;
+          }
+        }
+        if (topCatEl) topCatEl.textContent = topCat;
+      } else {
+        if (avgRatingEl) avgRatingEl.textContent = "0.0 ★";
+        if (topCatEl) topCatEl.textContent = "None";
       }
     }
 

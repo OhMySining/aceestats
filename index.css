@@ -528,6 +528,34 @@ button, input, select, textarea {
   text-align: center;
 }
 
+.profile-streak {
+  font-size: 12px;
+  font-weight: 800;
+  color: #f59e0b; /* Vibrant amber/gold */
+  background: rgba(245, 158, 11, 0.1);
+  padding: 4px 12px;
+  border-radius: var(--radius-xl);
+  margin-bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.05);
+  animation: pulseStreak 2s infinite ease-in-out;
+}
+
+@keyframes pulseStreak {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.05);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+  }
+}
+
 .profile-bio {
   font-size: 14px;
   color: var(--text-muted);

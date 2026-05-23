@@ -1,70 +1,52 @@
 # AceeStats
 
-AceeStats is a student activity tracking platform designed to help learners log, rate, and share their extracurricular involvement across school organizations.
-
-## Project Overview
-
-AceeStats lets students record participation in school-based activities such as:
-- student government roles
-- academic clubs (debate, science fairs, competitions)
-- arts, culture, and performing arts (dance, painting, music)
-- other organizational events and community activities
-
-Students can rate each activity, upload supporting photos, and view their own progress over time.
-
-
-## Key Features
-
-### Log Page
-- Create activity entries with title, description, date, and images
-- Rate each activity using a 1–5 star system
-- Track activity type and organization details
-
-### Profile Page
-- Display username, bio, and student profile image
-- Show activity rating summary (5-star through 1-star counts)
-- Highlight top 4 favorite activities
-- List recent activity logs
-
-### Feed Page
-- Browse friends and classmates on the left panel
-- See recent activity logs from friends in the main feed
-- Access navigation controls from the right panel
-
-### Trending Page
-- Discover the most active student organizations
-- View which organizations students most want to join
-- See top-ranked organizations by student activity and engagement
-
-## Design & User Experience
-- Frontend built with HTML, CSS, and JavaScript
-- Primary color palette: shades of green with white accents
-- Includes dark mode for improved accessibility and comfort
-
-## Backend & Data
-- Uses MySQL for activity, profile, and social data storage
-- Supports student logs, ratings, friends, and organization analytics
-
-## Deployment
-- Prepared for deployment to a public web host or cloud platform
-- Compatible with standard LAMP/LEMP environments for PHP + MySQL or JavaScript-based hosting with API support
-
-## Future Improvements
-- Add real-time notifications for new friend activity
-- Support user authentication and role-based access
-- Build mobile-friendly responsive layouts
-- Extend analytics with progress charts and organization insights
-
-## Getting Started
-1. Clone the repository
-2. Open the project in your code editor
-3. Build the frontend with your preferred static site tooling
-4. Configure MySQL and connect it to the backend service
-5. Deploy the app to a web server or hosting platform
+AceeStats is a premium student activity tracking and social logging platform designed to help learners log, rate, and showcase their extracurricular involvement across school organizations in the Philippines.
 
 ---
 
-## Developer & Agent Resources
+## 🌟 High-Fidelity Features
+
+### 1. ✍️ Extracurricular Activity Logging (Log Page)
+* **Detailed Logs**: Log activities with descriptive titles, date, host club, and reflections.
+* **1–5 Star Rating System**: Rate enjoyment, learning outcomes, and overall values with interactive SVG stars.
+* **Photo Attachments**: Upload and attach high-resolution memory proofs directly from your local disk using a dynamic Base64 FileReader uploader.
+* **Campus Integration**: Tie logs to specific schools or default to your primary campus.
+
+### 2. 👤 Student Extracurricular Portfolio (Profile Page)
+* **Identity Card**: Showcases student name (**Ethan Sterling**), custom avatar, bio, and a dedicated **🏫 UP Diliman** badge.
+* **🔥 Active Streak counter**: Visualizes consecutive active loggings with a custom glowing, pulsing CSS animation.
+* **Rating Distribution**: Calculates log star frequencies and renders stagger-animated progressive progress bars.
+* **Featured Favorites Grid**: Spotlights your top 4 highest-rated activities with smooth hover zoom animations.
+* **Personal Archive**: Lists all chronological activity logs with campus metadata.
+
+### 3. 👥 Social Feed & Analytics Panel (Feed Page)
+* **Classmates Directory**: Real-time directory of online classmates across different schools (e.g. *Sarah from Ateneo*, *Alex from De La Salle*, *Carlos from UST*).
+* **Community Timeline**: Scrolling feed of recent activity cards with responsive social reactions ("Clap", "Support") and animations.
+* **📊 Personal Metrics Widget**: Computes dynamic stats in real time (Total Logs, Average Rating, and Top Category) inside a dedicated glassmorphic sidebar card.
+
+### 4. 📈 Organization Analytics Scoreboard (Trending Page)
+* **Top 3 Podium**: Showcases the 3 most active clubs (Student Council, Debate Society, Robotics) inside beautiful pedestal columns.
+* **Real-time Re-ranking**: Scoreboard updates dynamically when users express interest using the active **"Want to Join"** button. The database re-sorts all organizations instantly using the formula: `logs_count * 2 + interests_count`.
+
+---
+
+## 🎨 Premium UI/UX & Styling
+* **Emerald Sage Theme**: Harmonized HSL custom colors designed for high-end digital platforms.
+* **Sleek Dark Mode**: A floating theme controller persists user dark/light mode preference across page reloads.
+* **Glassmorphism**: Backdrop filters (`blur(16px)`), translucent white overlays, and ultra-fine card borders.
+* **Tab Icon (Favicon)**: Custom tab logo using the Gemini-generated AceeStats brand logo.
+
+---
+
+## 🏗️ Technical Architecture
+* **Frontend**: HTML5, custom HSL CSS3, responsive single-page Vanilla JS framework.
+* **Simulated Relational Database**: Implemented in **[app.js](app.js)** using `localStorage`. Seeds comprehensive starting items (5 clubs, 10 friends, 12 logs, and interests) so the system is immediately functional.
+* **Auto-Healing Schema Engine**: Features a database seed version tracker. Outdated local caches automatically purge and re-seed clean, working assets in the browser on page load.
+* **Simulated REST API Router**: Simulates REST endpoints asynchronously with mock network latency (150ms) to provide an authentic client-server performance simulation.
+
+---
+
+## 📂 Developer & Agent Resources
 
 To support co-development, the detailed specifications for this project are organized into specialized files. You can find the main documentation entry point at:
 * 📑 **[AGENTS.md](AGENTS.md)**: Main developer and AI agent manual.
@@ -75,4 +57,3 @@ To support co-development, the detailed specifications for this project are orga
 ---
 
 AceeStats is intended to help students stay organized, celebrate their achievements, and discover activity trends across their school community.
-
