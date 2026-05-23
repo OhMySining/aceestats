@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AceeStats - Premium Student Extracurricular Activity Hub</title>
+  <meta name="description" content="Centralized student dashboard to track, rate, and share involvement across school clubs and organizations.">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- ==========================================================================
+         Header & Navigation Bar
+         ========================================================================== -->
+    <header class="navbar">
+      <div class="brand-container">
+        <div class="brand-logo">A</div>
+        <span class="brand-name">AceeStats</span>
+      </div>
+      
+      <nav class="nav-links">
+        <div class="nav-item active" data-view="log">
+          <!-- Log Icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          <span>Log</span>
+        </div>
+        <div class="nav-item" data-view="profile">
+          <!-- Profile Icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Profile</span>
+        </div>
+        <div class="nav-item" data-view="feed">
+          <!-- Feed Icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+          <span>Feed</span>
+        </div>
+        <div class="nav-item" data-view="trending">
+          <!-- Trending Icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          <span>Trending</span>
+        </div>
+      </nav>
+      
+      <div class="controls-container">
+        <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle Dark Mode">
+          <!-- Sun Icon -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- ==========================================================================
+         Main SPA Views Area
+         ========================================================================== -->
+    <main class="view-wrapper">
+      
+      <!-- ----------------------------------------------------------------------
+           View 1: LOG PAGE
+           ---------------------------------------------------------------------- -->
+      <section class="app-view active" id="log-view">
+        <div class="log-layout">
+          <div class="premium-card">
+            <div class="section-header">
+              <h2 class="section-title">Log Extracurricular Activity</h2>
+              <p class="section-subtitle">Record your active involvement, rate your learning, and upload proof of participation.</p>
+            </div>
+            
+            <form id="activity-log-form">
+              <div class="form-group">
+                <label class="form-label" for="log-title">Activity Title</label>
+                <input class="form-control" type="text" id="log-title" placeholder="e.g., Led debate tournament prep, Organized science booth" required>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label" for="log-org">Host Organization / Club</label>
+                <select class="form-control" id="log-org" required>
+                  <!-- Populate options dynamically -->
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="log-category">Category</label>
+                <select class="form-control" id="log-category" required>
+                  <option value="Student Government">Student Government</option>
+                  <option value="Academic Clubs">Academic Clubs</option>
+                  <option value="Arts & Culture">Arts & Culture</option>
+                  <option value="Sports & Athletics">Sports & Athletics</option>
+                  <option value="Community Service">Community Service</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="log-date">Date of Activity</label>
+                <input class="form-control" type="date" id="log-date" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Enjoyment & Value Rating</label>
+                <div class="star-rating-container">
+                  <div class="star-input" id="star-input-group">
+                    <svg data-val="5" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg data-val="4" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg data-val="3" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg data-val="2" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg data-val="1" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  </div>
+                  <span id="star-desc-text" style="font-weight:600; color:var(--text-muted);">Select a rating</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="log-desc">Description / Reflections</label>
+                <textarea class="form-control" id="log-desc" rows="4" placeholder="Briefly describe what you did and what you learned from this experience..." required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Proof / Memory Attachment</label>
+                <div class="image-upload-wrapper">
+                  <span class="upload-icon">✦</span>
+                  <p style="font-weight: 700;">Drag and drop or click to upload photo</p>
+                  <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">JPG, PNG, WebP up to 5MB</p>
+                  <input type="file" id="log-image" accept="image/*">
+                  <img class="upload-preview" id="image-upload-preview" alt="Upload preview">
+                </div>
+              </div>
+
+              <button type="submit" class="btn-primary">
+                <span>Publish Activity Log</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polyline points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ----------------------------------------------------------------------
+           View 2: PROFILE PAGE
+           ---------------------------------------------------------------------- -->
+      <section class="app-view" id="profile-view">
+        <div class="profile-layout">
+          
+          <!-- Left Column (User Bio Card) -->
+          <aside class="premium-card profile-card">
+            <div class="profile-avatar-container">
+              <img class="profile-avatar" id="user-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="User avatar">
+            </div>
+            <h3 class="profile-username" id="user-display-name">Loading...</h3>
+            <p class="profile-bio" id="user-bio-text">Loading bio...</p>
+            <button class="edit-profile-btn" id="open-edit-modal-btn">Edit Profile</button>
+            
+            <div class="rating-breakdown-section">
+              <h4 class="breakdown-title">Rating Breakdown</h4>
+              <div id="breakdown-bars-container">
+                <!-- Populate dynamically: 5★ down to 1★ -->
+              </div>
+            </div>
+          </aside>
+          
+          <!-- Right Column (Dashboard Board) -->
+          <div class="dashboard-panel">
+            
+            <!-- Highlighted Favorites Section -->
+            <div class="premium-card">
+              <h3 class="section-title">Featured Favorites</h3>
+              <p class="section-subtitle" style="margin-bottom: 16px;">Your top 4 rated activities highlighted in your portfolio.</p>
+              
+              <div class="favorites-grid" id="favorites-grid-container">
+                <!-- Dynamic insertion -->
+              </div>
+            </div>
+            
+            <!-- History Stream -->
+            <div class="premium-card">
+              <h3 class="section-title">Personal Log Archive</h3>
+              <p class="section-subtitle" style="margin-bottom: 16px;">Chronological timeline of all your recorded extracurricular involvements.</p>
+              
+              <div class="timeline-list" id="personal-timeline-container">
+                <!-- Dynamic insertion -->
+              </div>
+            </div>
+            
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- ----------------------------------------------------------------------
+           View 3: FEED PAGE
+           ---------------------------------------------------------------------- -->
+      <section class="app-view" id="feed-view">
+        <div class="feed-layout">
+          
+          <!-- Left Panel: Friends Directory -->
+          <aside class="premium-card directory-card">
+            <h4 class="breakdown-title" style="margin-bottom: 8px;">Classmates</h4>
+            <p style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">Active loggers in your school community</p>
+            <div class="directory-list" id="friends-list-container">
+              <!-- Dynamic insertion -->
+            </div>
+          </aside>
+          
+          <!-- Center Panel: Activity Stream -->
+          <div class="feed-stream" id="social-feed-container">
+            <!-- Dynamic Insertion of Feed Cards -->
+          </div>
+          
+          <!-- Right Panel: Quick Navigation Actions -->
+          <aside class="premium-card quicklinks-card">
+            <h4 class="breakdown-title">Quick Actions</h4>
+            <div class="quicklinks-list">
+              <div class="quicklink-item" data-action="log">
+                <span class="quicklink-icon">✍</span>
+                <span>Log New Activity</span>
+              </div>
+              <div class="quicklink-item" data-action="trending">
+                <span class="quicklink-icon">📈</span>
+                <span>View Trending Clubs</span>
+              </div>
+              <div class="quicklink-item" data-action="profile">
+                <span class="quicklink-icon">👤</span>
+                <span>Manage My Portfolio</span>
+              </div>
+            </div>
+          </aside>
+          
+        </div>
+      </section>
+
+      <!-- ----------------------------------------------------------------------
+           View 4: TRENDING PAGE
+           ---------------------------------------------------------------------- -->
+      <section class="app-view" id="trending-view">
+        <div class="trending-layout">
+          
+          <div class="section-header" style="text-align: center;">
+            <h2 class="section-title">Trending Organizations</h2>
+            <p class="section-subtitle">Discover the most active school clubs ranked by total activity logs and student interest weight.</p>
+          </div>
+          
+          <!-- Top Podium Pedestals -->
+          <div class="podium-container" id="podium-cards-container">
+            <!-- Dynamically populated 1st, 2nd, and 3rd place pedestals -->
+          </div>
+          
+          <!-- Full Rankings Scoreboard -->
+          <div class="premium-card">
+            <h3 class="scoreboard-title">Organization Engagement Scoreboard</h3>
+            <div class="scoreboard-list" id="scoreboard-rows-container">
+              <!-- Dynamically populated list rows -->
+            </div>
+          </div>
+          
+        </div>
+      </section>
+      
+    </main>
+
+  </div>
+
+  <!-- ==========================================================================
+       Edit Profile Modal
+       ========================================================================== -->
+  <div class="modal-overlay" id="edit-profile-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Edit Student Profile</h3>
+        <button class="modal-close" id="close-modal-btn">&times;</button>
+      </div>
+      
+      <form id="edit-profile-form">
+        <div class="form-group">
+          <label class="form-label" for="edit-display-name">Student Full Name</label>
+          <input class="form-control" type="text" id="edit-display-name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="edit-bio">Short Biography</label>
+          <textarea class="form-control" id="edit-bio" rows="4" placeholder="Briefly describe your extracurricular goals and focus areas..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="edit-avatar">Avatar URL</label>
+          <input class="form-control" type="url" id="edit-avatar" placeholder="https://unsplash.com/photo-..." required>
+        </div>
+        
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" id="cancel-edit-btn">Cancel</button>
+          <button type="submit" class="btn-primary" style="flex:1; width:auto; padding:12px 24px;">Save Portfolio</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Core Application Script
+       ========================================================================== -->
+  <script src="app.js"></script>
+</body>
+</html>
