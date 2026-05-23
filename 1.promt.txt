@@ -1,0 +1,42 @@
+trying the promt:
+
+act as a seinor fullstack developer.
+
+your task is to crate a website that will be named AceeStats that is for students
+
+to log their organizational activities in school like:
+student governance (with their roles),
+academic clubs like debates and fairs,
+arts, culture, and performing arts like dance, painting, etc
+and other organizational activities.
+in the log page that they've done and they can rate it (like the app in letterbox) and they can also add pictures of the said log
+
+
+to view their recent logs in their profile page that also contains:
+their username
+bio
+profile (use a nanobanana for making a student ai profile)
+their stats of how many (5 star, 4 star, 3 star, 2 star, 1 star they've rate)
+their 4 favorite activites and
+their recent actvities
+
+to view other logs of their friends in the feed page that contains
+thier friends in the aceestats that is placed in the left
+the recent logs of thir friends in the middle and
+the navigation bar at the right
+
+at the trending page they can view:
+the currenrt most active organizations
+whats the most wanted organizations that many students want to join
+what's the current organizations that are having the most high organization ranking
+
+this frontend will use html, css, and javascript as the primary building block of the website that will utilize the use of shades of green and white in colors.
+also add a dark mode for more user friendly experience.
+
+the database will use mysql.
+the system will be deployed in world wide web.
+
+Make sure all the components are compatible and properly integrated.
+promt final:
+
+Act as a Senior Full-Stack Developer, UI/UX Designer, and Software Architect. Design and develop a modern, production-ready web application called **AceeStats**, a social activity-tracking platform for students inspired by Letterboxd and LinkedIn. The platform allows students to log and review their participation in school organizations and extracurricular activities, including student governance (with specific roles such as President, Vice President, Secretary, Treasurer, Auditor, Representative, Committee Head, etc.), academic organizations (debate clubs, science fairs, mathematics societies, research conferences, quiz bees, and competitions), arts, culture, and performing arts (dance, theater, music, choir, painting, photography, and cultural presentations), and other organizational activities. Students should be able to create detailed activity logs containing an activity title, organization name, category, role, date, description or reflection, a 1–5 star rating system similar to Letterboxd, multiple photo uploads, tags, and privacy settings. The profile page should feature an AI-generated student profile picture using Nano Banana, username, bio, school information, activity statistics, rating distribution (number of 5-star, 4-star, 3-star, 2-star, and 1-star ratings), top four favorite activities, highest-rated experiences, most-participated organizations, and recent activity logs displayed in visually appealing cards. The feed page should function as a social network where students can connect with friends, view their friends list on the left sidebar, see a central feed containing recent activity logs with images, ratings, descriptions, likes, comments, and shares, and access a right sidebar navigation menu containing Home, Feed, Log Activity, Trending, Profile, Notifications, Settings, and a Dark Mode toggle. The trending page should showcase the most active organizations, the most desired organizations that students want to join, and the highest-rated organizations based on student reviews, accompanied by interactive analytics such as bar charts, line charts, pie charts, and activity heatmaps. Include a powerful search and discovery system that allows users to search for students, organizations, activities, and friends using filters and sorting options. The design should be modern, professional, and highly polished, taking inspiration from Letterboxd, LinkedIn, Discord, and modern dashboard applications. Use a color palette centered around shades of green and white, including forest green, emerald green, sage green, and white, while also implementing a fully functional dark mode with theme persistence using localStorage and smooth transitions. The frontend must be built using HTML5, CSS3, and JavaScript, utilizing responsive layouts with CSS Grid and Flexbox to ensure compatibility across desktop, tablet, and mobile devices. The backend should be developed using PHP with RESTful APIs, while MySQL should be used as the database with tables for users, profiles, organizations, activity logs, ratings, comments, likes, favorites, friendships, and notifications. Support image uploads for activity logs and profile pictures, and ensure all components are fully integrated, scalable, secure, and optimized for deployment on the World Wide Web. The final result should feel like a premium social platform specifically designed for student involvement, combining activity tracking, social networking, analytics, and personal achievement tracking into a seamless and engaging user experience.
