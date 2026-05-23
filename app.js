@@ -10,19 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. Mock DB Engine (Persistent client-side Relational Model via localStorage)
   // ------------------------------------------------------------------------
   const MOCK_ORGS = [
-    { id: 1, name: "Student Council", category: "Student Government", description: "The governing body representing student interests and organizing school-wide campaigns.", logo_url: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=150&q=80" },
-    { id: 2, name: "Debate Society", category: "Academic Clubs", description: "Fostering critical thinking, public speaking, and competitive debate excellence.", logo_url: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=150&q=80" },
-    { id: 3, name: "Science & Robotics Club", category: "Academic Clubs", description: "Hands-on engineering, coding microcontrollers, and building competitive bots.", logo_url: "https://images.unsplash.com/photo-1581092334651-ddf26d9aae9d?auto=format&fit=crop&w=150&q=80" },
-    { id: 4, name: "Performing Arts Collective", category: "Arts & Culture", description: "Connecting dancers, musicians, painters, and actors for creative showcases.", logo_url: "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=150&q=80" },
-    { id: 5, name: "Green Earth Coalition", category: "Community Service", description: "Advocating for campus environmental sustainability and community recycling initiatives.", logo_url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=150&q=80" }
+    { id: 1, name: "Student Council", category: "Student Government", description: "The governing body representing student interests and organizing school-wide campaigns.", logo_url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=150&q=80" },
+    { id: 2, name: "Debate Society", category: "Academic Clubs", description: "Fostering critical thinking, public speaking, and competitive debate excellence.", logo_url: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=150&q=80" },
+    { id: 3, name: "Science & Robotics Club", category: "Academic Clubs", description: "Hands-on engineering, coding microcontrollers, and building competitive bots.", logo_url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=150&q=80" },
+    { id: 4, name: "Performing Arts Collective", category: "Arts & Culture", description: "Connecting dancers, musicians, painters, and actors for creative showcases.", logo_url: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=150&q=80" },
+    { id: 5, name: "Green Earth Coalition", category: "Community Service", description: "Advocating for campus environmental sustainability and community recycling initiatives.", logo_url: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=150&q=80" }
   ];
 
   const MOCK_FRIENDS = [
-    { id: 101, username: "sarah_jennings", name: "Sarah Jennings", avatar_url: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80", status: "online", statusText: "Active Logger" },
-    { id: 102, username: "alex_mercer", name: "Alex Mercer", avatar_url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80", status: "active-logger", statusText: "Just Logged" },
-    { id: 103, username: "carlos_ruiz", name: "Carlos Ruiz", avatar_url: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80", status: "online", statusText: "Online" },
-    { id: 104, username: "aisha_patel", name: "Aisha Patel", avatar_url: "https://images.unsplash.com/photo-1534751516642-a131ffd103fd?auto=format&fit=crop&w=150&q=80", status: "offline", statusText: "Offline" },
-    { id: 105, username: "marcus_vance", name: "Marcus Vance", avatar_url: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80", status: "online", statusText: "Online" }
+    { id: 101, username: "sarah_jennings", name: "Sarah Jennings", avatar_url: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80", status: "online", statusText: "Active Logger" },
+    { id: 102, username: "alex_mercer", name: "Alex Mercer", avatar_url: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80", status: "active-logger", statusText: "Just Logged" },
+    { id: 103, username: "carlos_ruiz", name: "Carlos Ruiz", avatar_url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80", status: "online", statusText: "Online" },
+    { id: 104, username: "aisha_patel", name: "Aisha Patel", avatar_url: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80", status: "offline", statusText: "Offline" },
+    { id: 105, username: "marcus_vance", name: "Marcus Vance", avatar_url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80", status: "online", statusText: "Online" }
   ];
 
   const MOCK_ACTIVITIES = [
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Academic Clubs",
       activity_date: "2026-05-18",
       rating: 5,
-      image_url: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80"
+      image_url: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 202,
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Academic Clubs",
       activity_date: "2026-05-20",
       rating: 5,
-      image_url: "https://images.unsplash.com/photo-1517055720413-77a28e35320e?auto=format&fit=crop&w=800&q=80"
+      image_url: "https://images.unsplash.com/photo-1581092334651-ddf26d9aae9d?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 203,
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Arts & Culture",
       activity_date: "2026-05-21",
       rating: 4,
-      image_url: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=800&q=80"
+      image_url: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 204,
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Student Government",
       activity_date: "2026-05-15",
       rating: 4,
-      image_url: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80"
+      image_url: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 205,
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Community Service",
       activity_date: "2026-05-22",
       rating: 5,
-      image_url: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80"
+      image_url: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80"
     }
   ];
 
@@ -89,12 +89,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     init() {
+      const CURRENT_VERSION = 'v2.2';
+      const storedVersion = localStorage.getItem('acee_db_version');
+
+      // Schema/content auto-update block: clear stale localStorage cache to force clean reload of working images
+      if (storedVersion !== CURRENT_VERSION) {
+        localStorage.removeItem('acee_user');
+        localStorage.removeItem('acee_orgs');
+        localStorage.removeItem('acee_friends');
+        localStorage.removeItem('acee_activities');
+        localStorage.removeItem('acee_interests');
+        localStorage.setItem('acee_db_version', CURRENT_VERSION);
+      }
+
       if (!localStorage.getItem('acee_user')) {
         localStorage.setItem('acee_user', JSON.stringify({
           id: 100, // Current user
           username: "efren_cenir",
           name: "Efren Cenir",
-          avatar_url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+          avatar_url: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80",
           bio: "Extracurricular enthusiast focused on academic science research, community organization, and technology builds."
         }));
       }
@@ -120,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Academic Clubs",
             activity_date: "2026-05-19",
             rating: 5,
-            image_url: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80"
+            image_url: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80"
           },
           {
             id: 302,
@@ -131,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Student Government",
             activity_date: "2026-05-22",
             rating: 4,
-            image_url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80"
+            image_url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80"
           },
           {
             id: 303,
@@ -142,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Community Service",
             activity_date: "2026-05-10",
             rating: 5,
-            image_url: "https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?auto=format&fit=crop&w=800&q=80"
+            image_url: "https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=600&q=80"
           },
           {
             id: 304,
@@ -153,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Academic Clubs",
             activity_date: "2026-05-14",
             rating: 3,
-            image_url: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80"
+            image_url: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80"
           }
         ];
         localStorage.setItem('acee_activities', JSON.stringify(seedActivities));
