@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     init() {
-      const CURRENT_VERSION = 'v2.2';
+      const CURRENT_VERSION = 'v2.3';
       const storedVersion = localStorage.getItem('acee_db_version');
 
       // Schema/content auto-update block: clear stale localStorage cache to force clean reload of working images
@@ -105,8 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!localStorage.getItem('acee_user')) {
         localStorage.setItem('acee_user', JSON.stringify({
           id: 100, // Current user
-          username: "efren_cenir",
-          name: "Efren Cenir",
+          username: "ethan_sterling",
+          name: "Ethan Sterling",
           avatar_url: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80",
           bio: "Extracurricular enthusiast focused on academic science research, community organization, and technology builds."
         }));
