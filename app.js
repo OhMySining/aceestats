@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   const MOCK_FRIENDS = [
-    { id: 101, username: "sarah_jennings", name: "Sarah Jennings", avatar_url: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80", status: "online", statusText: "Active Logger" },
-    { id: 102, username: "alex_mercer", name: "Alex Mercer", avatar_url: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80", status: "active-logger", statusText: "Just Logged" },
-    { id: 103, username: "carlos_ruiz", name: "Carlos Ruiz", avatar_url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80", status: "online", statusText: "Online" },
-    { id: 104, username: "aisha_patel", name: "Aisha Patel", avatar_url: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80", status: "offline", statusText: "Offline" },
-    { id: 105, username: "marcus_vance", name: "Marcus Vance", avatar_url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80", status: "online", statusText: "Online" }
+    { id: 101, username: "sarah_jennings", name: "Sarah Jennings", avatar_url: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80", status: "online", statusText: "Active Logger", school: "Ateneo de Manila University" },
+    { id: 102, username: "alex_mercer", name: "Alex Mercer", avatar_url: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80", status: "active-logger", statusText: "Just Logged", school: "De La Salle University" },
+    { id: 103, username: "carlos_ruiz", name: "Carlos Ruiz", avatar_url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80", status: "online", statusText: "Online", school: "University of Santo Tomas" },
+    { id: 104, username: "aisha_patel", name: "Aisha Patel", avatar_url: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80", status: "offline", statusText: "Offline", school: "Far Eastern University" },
+    { id: 105, username: "marcus_vance", name: "Marcus Vance", avatar_url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80", status: "online", statusText: "Online", school: "Mapúa University" }
   ];
 
   const MOCK_ACTIVITIES = [
@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Academic Clubs",
       activity_date: "2026-05-18",
       rating: 5,
-      image_url: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=600&q=80"
+      image_url: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=600&q=80",
+      school: "Ateneo de Manila University"
     },
     {
       id: 202,
@@ -46,7 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Academic Clubs",
       activity_date: "2026-05-20",
       rating: 5,
-      image_url: "https://images.unsplash.com/photo-1581092334651-ddf26d9aae9d?auto=format&fit=crop&w=600&q=80"
+      image_url: "https://images.unsplash.com/photo-1581092334651-ddf26d9aae9d?auto=format&fit=crop&w=600&q=80",
+      school: "De La Salle University"
     },
     {
       id: 203,
@@ -57,7 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Arts & Culture",
       activity_date: "2026-05-21",
       rating: 4,
-      image_url: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=600&q=80"
+      image_url: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=600&q=80",
+      school: "University of Santo Tomas"
     },
     {
       id: 204,
@@ -68,7 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Student Government",
       activity_date: "2026-05-15",
       rating: 4,
-      image_url: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80"
+      image_url: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80",
+      school: "Ateneo de Manila University"
     },
     {
       id: 205,
@@ -79,7 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Community Service",
       activity_date: "2026-05-22",
       rating: 5,
-      image_url: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80"
+      image_url: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80",
+      school: "Mapúa University"
     }
   ];
 
@@ -89,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     init() {
-      const CURRENT_VERSION = 'v2.3';
+      const CURRENT_VERSION = 'v2.4';
       const storedVersion = localStorage.getItem('acee_db_version');
 
       // Schema/content auto-update block: clear stale localStorage cache to force clean reload of working images
@@ -108,7 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
           username: "ethan_sterling",
           name: "Ethan Sterling",
           avatar_url: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80",
-          bio: "Extracurricular enthusiast focused on academic science research, community organization, and technology builds."
+          bio: "Extracurricular enthusiast focused on academic science research, community organization, and technology builds.",
+          school: "University of the Philippines Diliman"
         }));
       }
 
@@ -133,7 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Academic Clubs",
             activity_date: "2026-05-19",
             rating: 5,
-            image_url: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80"
+            image_url: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80",
+            school: "University of the Philippines Diliman"
           },
           {
             id: 302,
@@ -144,7 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Student Government",
             activity_date: "2026-05-22",
             rating: 4,
-            image_url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80"
+            image_url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80",
+            school: "University of the Philippines Diliman"
           },
           {
             id: 303,
@@ -155,7 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Community Service",
             activity_date: "2026-05-10",
             rating: 5,
-            image_url: "https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=600&q=80"
+            image_url: "https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=600&q=80",
+            school: "University of the Philippines Diliman"
           },
           {
             id: 304,
@@ -166,7 +175,8 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Academic Clubs",
             activity_date: "2026-05-14",
             rating: 3,
-            image_url: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80"
+            image_url: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80",
+            school: "University of the Philippines Diliman"
           }
         ];
         localStorage.setItem('acee_activities', JSON.stringify(seedActivities));
@@ -226,12 +236,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    static async updateProfile(name, bio, avatarUrl) {
+    static async updateProfile(name, bio, avatarUrl, school) {
       return this.request(() => {
         const user = db.get('acee_user');
         user.name = name;
         user.bio = bio;
         if (avatarUrl) user.avatar_url = avatarUrl;
+        if (school) user.school = school;
         db.set('acee_user', user);
         return { success: true, user };
       });
@@ -248,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    static async createActivity(title, orgId, category, date, rating, description, imageUrl) {
+    static async createActivity(title, orgId, category, date, rating, description, imageUrl, school) {
       return this.request(() => {
         const user = db.get('acee_user');
         const activities = db.get('acee_activities');
@@ -261,7 +272,8 @@ document.addEventListener('DOMContentLoaded', () => {
           category,
           activity_date: date,
           rating: parseInt(rating),
-          image_url: imageUrl || "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80"
+          image_url: imageUrl || "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80",
+          school: school || user.school || "University of the Philippines Diliman"
         };
         activities.push(newLog);
         db.set('acee_activities', activities);
@@ -423,6 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Bind metadata details
       document.getElementById('user-avatar').src = data.user.avatar_url;
       document.getElementById('user-display-name').textContent = data.user.name;
+      document.getElementById('user-school-text').textContent = "🏫 " + (data.user.school || "University of the Philippines Diliman");
       document.getElementById('user-bio-text').textContent = data.user.bio;
 
       // Render star rating progress bars
@@ -524,7 +537,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="timeline-card">
                 <div class="timeline-info">
                   <h4 class="timeline-title">${log.title}</h4>
-                  <span class="timeline-meta">${org.name} • ${log.category} • ${log.activity_date}</span>
+                  <span class="timeline-meta">${org.name} • ${log.category} • ${log.activity_date} <br/> <small style="font-weight:600; color:var(--text-muted); font-size:11px;">🏫 ${log.school || "University of the Philippines Diliman"}</small></span>
                 </div>
                 <div class="timeline-rating">${starsHTML}</div>
               </div>
@@ -553,7 +566,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div class="directory-info">
             <span class="directory-name">${f.name}</span>
-            <span class="directory-status">${f.statusText}</span>
+            <span class="directory-status">${f.statusText} • ${f.school || "Philippine School"}</span>
           </div>
         `;
         friendsContainer.appendChild(item);
@@ -579,7 +592,11 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="feed-card-author-info">
                 <img class="feed-card-avatar" src="${post.author.avatar_url}" alt="author avatar">
                 <div class="feed-card-meta">
-                  <span class="feed-card-name">${post.author.name} ${post.author.isSelf ? '<span style="font-weight:normal; font-size:11px; padding:2px 6px; background:var(--accent-light); color:var(--accent-primary); border-radius:10px; margin-left:4px;">You</span>' : ''}</span>
+                  <span class="feed-card-name">
+                    ${post.author.name} ${post.author.isSelf ? '<span style="font-weight:normal; font-size:11px; padding:2px 6px; background:var(--accent-light); color:var(--accent-primary); border-radius:10px; margin-left:4px;">You</span>' : ''}
+                    <br/>
+                    <small style="font-weight:600; color:var(--text-muted); font-size:11px;">🏫 ${post.school || post.author.school || "Philippine School"}</small>
+                  </span>
                   <span class="feed-card-org-tag">${post.org.name}</span>
                 </div>
               </div>
@@ -783,6 +800,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const orgId = document.getElementById('log-org').value;
           const category = document.getElementById('log-category').value;
           const date = document.getElementById('log-date').value;
+          const school = document.getElementById('log-school').value.trim();
           const desc = document.getElementById('log-desc').value.trim();
 
           if (!orgId) {
@@ -802,7 +820,8 @@ document.addEventListener('DOMContentLoaded', () => {
             date, 
             this.currentRating, 
             desc, 
-            this.selectedImageBase64
+            this.selectedImageBase64,
+            school
           );
 
           if (res.success) {
@@ -837,6 +856,7 @@ document.addEventListener('DOMContentLoaded', () => {
           document.getElementById('edit-display-name').value = user.name;
           document.getElementById('edit-bio').value = user.bio;
           document.getElementById('edit-avatar').value = user.avatar_url;
+          document.getElementById('edit-school').value = user.school || "University of the Philippines Diliman";
           
           modal.style.display = 'flex';
         });
@@ -850,8 +870,9 @@ document.addEventListener('DOMContentLoaded', () => {
           const name = document.getElementById('edit-display-name').value.trim();
           const bio = document.getElementById('edit-bio').value.trim();
           const avatar = document.getElementById('edit-avatar').value.trim();
+          const school = document.getElementById('edit-school').value;
 
-          const res = await API.updateProfile(name, bio, avatar);
+          const res = await API.updateProfile(name, bio, avatar, school);
           if (res.success) {
             closeModal();
             this.viewController.renderProfileView(); // Update profile page layout reactive-ly
