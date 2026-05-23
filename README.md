@@ -4,6 +4,20 @@ AceeStats is a premium student activity tracking and social logging platform des
 
 ---
 
+## 🎯 Our Mission: Combating Burnout & Sparking Interest
+
+Extracurricular activities are crucial for personal growth, but students today face a major hurdle: **burnout and a gradual loss of interest**. The constant demands of academic life, combined with a lack of visual appreciation or rewarding tracking methods, often turn exciting club involvements into a tedious chore.
+
+**AceeStats aims to solve this.** 
+
+By gamifying achievements, visualizing progress through active streaks, highlighting personal portfolios, and creating an inspiring school-wide community feed, AceeStats transforms extracurricular logging into a source of pride and motivation. We want to inspire students to:
+* **Rediscover their passion** by seeing their rating distributions and favorite highlights grow visually.
+* **Stay motivated to participate** using visual Fire Streaks that celebrate consistent involvement.
+* **Inspire and be inspired by peers** through a shared community feed, encouraging active collaboration and friendly engagement.
+* **Find their community** by discovering highly active and trending school clubs.
+
+---
+
 ## 🌟 High-Fidelity Features
 
 ### 1. ✍️ Extracurricular Activity Logging (Log Page)
