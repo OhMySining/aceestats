@@ -16,7 +16,9 @@
          ========================================================================== -->
     <header class="navbar">
       <div class="brand-container">
-        <div class="brand-logo">A</div>
+        <div class="brand-logo">
+          <img src="Images/Gemini_Generated_Image_l3m9jyl3m9jyl3m9.png" alt="AceeStats Logo">
+        </div>
         <span class="brand-name">AceeStats</span>
       </div>
       
@@ -97,6 +99,11 @@
               </div>
 
               <div class="form-group">
+                <label class="form-label" for="log-school">Associated School / Campus</label>
+                <input class="form-control" type="text" id="log-school" placeholder="Defaults to your school (e.g., UP Diliman, Ateneo)">
+              </div>
+
+              <div class="form-group">
                 <label class="form-label">Enjoyment & Value Rating</label>
                 <div class="star-rating-container">
                   <div class="star-input" id="star-input-group">
@@ -147,6 +154,7 @@
               <img class="profile-avatar" id="user-avatar" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80" alt="User avatar">
             </div>
             <h3 class="profile-username" id="user-display-name">Loading...</h3>
+            <div class="profile-school" id="user-school-text">🏫 Loading school...</div>
             <p class="profile-bio" id="user-bio-text">Loading bio...</p>
             <button class="edit-profile-btn" id="open-edit-modal-btn">Edit Profile</button>
             
@@ -281,6 +289,18 @@
         <div class="form-group">
           <label class="form-label" for="edit-avatar">Avatar URL</label>
           <input class="form-control" type="url" id="edit-avatar" placeholder="https://unsplash.com/photo-..." required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="edit-school">School / University</label>
+          <select class="form-control" id="edit-school" required>
+            <option value="University of the Philippines Diliman">University of the Philippines Diliman</option>
+            <option value="Ateneo de Manila University">Ateneo de Manila University</option>
+            <option value="De La Salle University">De La Salle University</option>
+            <option value="University of Santo Tomas">University of Santo Tomas</option>
+            <option value="Far Eastern University">Far Eastern University</option>
+            <option value="Mapúa University">Mapúa University</option>
+            <option value="Polytechnic University of the Philippines">Polytechnic University of the Philippines</option>
+          </select>
         </div>
         
         <div class="modal-actions">
